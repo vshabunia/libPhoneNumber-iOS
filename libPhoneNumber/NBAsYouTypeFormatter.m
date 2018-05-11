@@ -372,6 +372,7 @@ static const NSUInteger NBMinLeadingDigitsLength = 3;
   for (NSUInteger i = 0; i < formatListLength; ++i) {
     /** @type {i18n.phonenumbers.NumberFormat} */
     NBNumberFormat *format = [formatList nb_safeObjectAtIndex:i class:[NBNumberFormat class]];
+    format.nationalPrefixOptionalWhenFormatting = YES;
     /** @type {BOOL} */
     BOOL nationalPrefixIsUsedByCountry =
         (self.currentMetaData_.nationalPrefix && self.currentMetaData_.nationalPrefix.length > 0);
